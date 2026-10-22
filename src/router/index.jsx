@@ -16,7 +16,7 @@ import AdminOrders from "../pages/admin/Orders";
 import AdminPricing from "../pages/admin/Pricing";
 
 function AppRouter() {
-  return <BrowserRouter><Routes>
+  return <BrowserRouter basename="/id-card-store4"><Routes>
     <Route path="/" element={<MainLayout />} />
     <Route path="/pilih-tipe" element={<ChooseType />} />
     <Route path="/templates" element={<Templates />} />
