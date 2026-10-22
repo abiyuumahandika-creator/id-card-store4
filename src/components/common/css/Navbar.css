@@ -1,0 +1,209 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  min-height: 76px;
+  padding: 0 6.3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background: color-mix(in srgb, var(--page) 94%, transparent);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-family: "Manrope", sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -1.1px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.brand-period { color: #7a941d; }
+.nav-links { display: flex; align-items: center; gap: clamp(16px, 2.3vw, 32px); }
+.nav-links a {
+  color: #5e6259;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.button {
+  min-height: 42px;
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border: 1px solid var(--ink);
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 150ms ease, color 150ms ease;
+}
+.button-dark { color: #fff; background: var(--ink); }
+.button-dark:hover { color: var(--ink); background: var(--accent); }
+.menu-toggle { display: none; }
+
+@media (max-width: 900px) {
+  .navbar { padding: 0 5%; gap: 16px; }
+  .nav-links { gap: 14px; }
+  .nav-links a { font-size: 11px; }
+  .nav-cta { padding: 0 12px; }
+}
+
+@media (max-width: 720px) {
+  .navbar { min-height: 66px; padding: 0 5%; gap: 12px; }
+  .brand { font-size: 19px; }
+  .brand-icon { width: 30px; height: 30px; }
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    margin-left: auto;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: transparent;
+    color: var(--ink);
+    font-size: 21px;
+    cursor: pointer;
+  }
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    display: none;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 5% 16px;
+    border-bottom: 1px solid var(--line);
+    background: var(--page);
+  }
+  .nav-links.nav-open { display: flex; flex-direction: column; }
+  .nav-links a { padding: 13px 0; font-size: 13px; }
+}
+
+
+.nav-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--page);
+  color: var(--ink);
+  font-size: 22px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.nav-theme-toggle:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+
+.nav-theme-toggle:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+@media (max-width: 720px) {
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-theme-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+}
+
+/* Tombol Light/Dark Mode */
+.nav-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--page);
+  color: var(--ink);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.nav-theme-toggle:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* Pastikan tombol tetap terlihat di HP */
+@media (max-width: 720px) {
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-theme-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+}

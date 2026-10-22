@@ -1,0 +1,4 @@
+import { getOrders, updateOrderStatus } from "../../services/orders";
+import { formatCurrency } from "../../utils/currency";
+import { useState } from "react";
+export default function Orders(){const [orders,setOrders]=useState(getOrders());return <main className="page-shell"><p className="choose-type-eyebrow">ADMIN / ORDERS</p><h1>Daftar pesanan</h1>{!orders.length?<p>Belum ada pesanan lokal.</p>:orders.map(o=><article className="template-selection-summary" key={o.id}><div><h2>{o.id}</h2><p>{o.customer.name} · {o.customer.whatsapp}</p><p>{formatCurrency(o.total)} · {o.status}</p><select value={o.status} onChange={e=>{updateOrderStatus(o.id,e.target.value);setOrders(getOrders());}}><option>Menunggu pembayaran</option><option>Pembayaran dikonfirmasi</option><option>Diproses</option><option>Selesai</option><option>Dibatalkan</option></select></div></article>)}</main>;}

@@ -1,0 +1,1 @@
+export default function QuantitySelector({value,onChange,min=1}){return <label>Jumlah kartu<input type="number" min={min} value={value} onChange={e=>onChange(Math.max(min,Number(e.target.value)||min))}/></label>;}

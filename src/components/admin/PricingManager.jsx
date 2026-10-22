@@ -1,0 +1,1 @@
+export default function PricingManager({tiers=[],onChange=()=>{}}){return <div>{tiers.map((tier,index)=><label key={index}>Tier {index+1}<input type="number" value={tier.price} onChange={e=>onChange(tiers.map((t,i)=>i===index?{...t,price:Number(e.target.value)}:t))}/></label>)}</div>;}

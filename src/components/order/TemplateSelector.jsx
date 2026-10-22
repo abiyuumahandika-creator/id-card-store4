@@ -1,0 +1,1 @@
+export default function TemplateSelector({templates=[],value,onChange}){return <label>Template<select value={value||""} onChange={e=>onChange(e.target.value)}>{templates.map(t=><option key={t.id} value={t.id}>{t.name}</option>)}</select></label>;}

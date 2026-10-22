@@ -1,0 +1,2 @@
+import { formatCurrency } from "../../utils/currency";
+export default function CartItem({item,onQuantityChange,onRemove}){return <article className="template-selection-summary"><div><h3>{item.name}</h3><p>{item.quantity} × {formatCurrency(item.unitPrice||15000)}</p><strong>{formatCurrency(item.subtotal||0)}</strong></div><div><input aria-label={`Jumlah ${item.name}`} type="number" min="1" value={item.quantity} onChange={e=>onQuantityChange?.(Math.max(1,Number(e.target.value)||1))}/><button type="button" onClick={onRemove}>Hapus</button></div></article>;}

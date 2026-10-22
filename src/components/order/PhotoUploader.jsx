@@ -1,0 +1,2 @@
+import { useState } from "react";
+export default function PhotoUploader({onChange}){const [preview,setPreview]=useState("");return <label>Foto pemegang kartu<input type="file" accept="image/*" onChange={e=>{const file=e.target.files?.[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{const value=String(reader.result);setPreview(value);onChange?.(value);};reader.readAsDataURL(file);}}/>{preview&&<img src={preview} alt="Preview foto" style={{display:"block",width:100,height:100,objectFit:"cover"}}/>}</label>;}
